@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personalized DESIGN.md Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="tbinner">
+        <div class="tt">Personalized DESIGN.md Generator</div>
+        <div class="right">
+          <span id="saveNote">Saves automatically in your browser</span
+          ><button class="btn" id="resetBtn">Reset</button
+          ><button class="btn" id="previewBtn">Preview</button
+          ><button class="btn" id="copyBtn">Copy markdown</button
+          ><button class="btn primary" id="downloadBtn">
+            Download DESIGN.md
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="sheet">
+        <div class="lead">
+          <p class="eyebrow">Brand &amp; design system</p>
+          <h1>Personalized DESIGN.md Generator</h1>
+          <p>
+            Capture the decisions that keep a brand coherent everywhere it shows
+            up, from UX/UI components and digital experiences to graphics and
+            imagery. Fill in what applies; it saves as you go. When you are
+            ready, download a clean DESIGN.md you can drop into a repo, hand to
+            a collaborator, or feed to a design or coding agent as a shared
+            source of truth.
+          </p>
+        </div>
+
+        <!-- 1. BRAND FOUNDATION -->
+        <section class="sec">
+          <div class="sechead">
+            <div class="secnum" style="background: #fc8acb">1</div>
+            <div>
+              <h2 class="sectitle">Brand foundation</h2>
+              <p class="secintro">
+                The essence that every design decision should ladder back up to.
+              </p>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g2">
+              <label>Brand or product name</label
+              ><input
+                data-k="bName"
+                type="text"
+                placeholder="Used as the DESIGN.md title"
+              />
+            </div>
+            <div class="f g2">
+              <label>One-line description</label
+              ><input
+                data-k="bDesc"
+                type="text"
+                placeholder="What it is, in plain words"
+              />
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g1">
+              <label>Brand personality and voice</label
+              ><input
+                data-k="bPers"
+                type="text"
+                placeholder="e.g., calm, precise, warm, confident, never loud"
+              />
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g1">
+              <label>Design principles</label
+              ><textarea
+                data-k="bPrin"
+                rows="2"
+                placeholder="The north-star rules, e.g. clarity over decoration; generous space; one clear action per screen"
+              ></textarea>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g2">
+              <label>Feeling to evoke</label
+              ><textarea
+                data-k="bFeel"
+                rows="2"
+                placeholder="How it should feel to encounter the brand"
+              ></textarea>
+            </div>
+            <div class="f g2">
+              <label>Feeling to avoid</label
+              ><textarea
+                data-k="bAvoid"
+                rows="2"
+                placeholder="What it should never feel like"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. AUDIENCE & CONTEXT -->
+        <section class="sec">
+          <div class="sechead">
+            <div class="secnum" style="background: #fcb45c">2</div>
+            <div>
+              <h2 class="sectitle">Audience and context</h2>
+              <p class="secintro">
+                Who you are designing for, and the situation they are in when
+                they meet the work.
+              </p>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g1">
+              <label>Primary audience</label
+              ><textarea
+                data-k="aWho"
+                rows="2"
+                placeholder="Who they are, specifically. Narrow beats broad."
+              ></textarea>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g1">
+              <label>What they need from the experience</label
+              ><textarea
+                data-k="aNeeds"
+                rows="2"
+                placeholder="Their goal when they show up. What does success look like for them?"
+              ></textarea>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g2">
+              <label>Context of use</label
+              ><textarea
+                data-k="aCtx"
+                rows="2"
+                placeholder="Devices, environment, mindset, time pressure"
+              ></textarea>
+            </div>
+            <div class="f g2">
+              <label>Emotional response you want</label
+              ><textarea
+                data-k="aEmo"
+                rows="2"
+                placeholder="How they should feel during and after"
+              ></textarea>
+            </div>
+          </div>
+          <div class="fields">
+            <div class="f g1">
+              <label>Accessibility requirements</label
+              ><textarea
+                data-k="aA11y"
+                rows="2"
+                placeholder="e.g., AA contrast minimum, legible at small sizes, no motion-only cues, tap targets 44px+"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. APPLICATION AREAS -->
+        <section class="sec">
+          <div class="sechead">
+            <div class="secnum" style="background: #2bb7a6">3</div>
+            <div>
+              <h2 class="sectitle">Application areas</h2>
+              <p class="secintro">
+                Where the brand shows up, and what each surface is meant to
+                achieve. Intent first, so the visuals have a job to do.
+              </p>
+            </div>
+          </div>
+
+          <div class="sub">UX/UI components and digital experiences</div>
+          <div class="note">
+            For each one, name it and say what it should accomplish for the
+            user.
+          </div>
+          <div id="uxGroup" data-app="ux">
+            <div class="token app-item">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Component or experience</label
+                  ><input
+                    class="ai-name"
+                    data-k="ux1n"
+                    type="text"
+                    placeholder="e.g., onboarding flow, pricing page, empty state"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>What it should accomplish for the user</label
+                  ><input
+                    class="ai-purpose"
+                    data-k="ux1p"
+                    type="text"
+                    placeholder="e.g., get them to first value in under a minute"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="token app-item">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Component or experience</label
+                  ><input class="ai-name" data-k="ux2n" type="text" />
+                </div>
+                <div class="f g2">
+                  <label>What it should accomplish for the user</label
+                  ><input class="ai-purpose" data-k="ux2p" type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="ux">+ Add component</button>
+
+          <div class="sub">Graphics and imagery</div>
+          <div class="note">
+            For each one, name it and say what value it delivers or what it
+            should accomplish, such as product education or announcing a launch.
+          </div>
+          <div id="grGroup" data-app="gr">
+            <div class="token app-item">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Graphic or asset</label
+                  ><input
+                    class="ai-name"
+                    data-k="gr1n"
+                    type="text"
+                    placeholder="e.g., launch announcement, explainer carousel, OG image"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Value delivered or what it should accomplish</label
+                  ><input
+                    class="ai-purpose"
+                    data-k="gr1p"
+                    type="text"
+                    placeholder="e.g., educate on a feature; drive sign-ups; build awareness"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="token app-item">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Graphic or asset</label
+                  ><input class="ai-name" data-k="gr2n" type="text" />
+                </div>
+                <div class="f g2">
+                  <label>Value delivered or what it should accomplish</label
+                  ><input class="ai-purpose" data-k="gr2p" type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="gr">+ Add graphic</button>
+        </section>
+
+        <!-- 4. DESIGN TOKENS -->
+        <section class="sec">
+          <div class="sechead">
+            <div class="secnum" style="background: #8c7cff">4</div>
+            <div>
+              <h2 class="sectitle">Design tokens</h2>
+              <p class="secintro">
+                The reusable building blocks. Each one records three things: the
+                value, the purpose or context it is for, and the constraint that
+                keeps it from being misused.
+              </p>
+            </div>
+          </div>
+
+          <div class="sub">Color</div>
+          <div id="colorGroup" data-token="Color">
+            <div class="token">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Token name</label
+                  ><input
+                    class="tk-name"
+                    data-k="col1n"
+                    type="text"
+                    placeholder="e.g., Primary, Accent, Surface, Danger"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Value</label>
+                  <div class="colorwrap">
+                    <input
+                      type="color"
+                      class="tk-color"
+                      data-k="col1c"
+                      value="#8cffa7"
+                    /><input
+                      class="tk-value"
+                      data-k="col1v"
+                      type="text"
+                      placeholder="#HEX or token ref"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="fields">
+                <div class="f g2">
+                  <label>Purpose / context</label
+                  ><input
+                    class="tk-purpose"
+                    data-k="col1p"
+                    type="text"
+                    placeholder="e.g., only for primary CTA buttons"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Constraints / boundary</label
+                  ><input
+                    class="tk-constraint"
+                    data-k="col1x"
+                    type="text"
+                    placeholder="e.g., never on backgrounds; one per screen"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="color">+ Add color token</button>
+
+          <div class="sub">Typography</div>
+          <div id="typeGroup" data-token="Typography">
+            <div class="token">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Token name</label
+                  ><input
+                    class="tk-name"
+                    data-k="ty1n"
+                    type="text"
+                    placeholder="e.g., Display, Heading, Body, Caption"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Value</label
+                  ><input
+                    class="tk-value"
+                    data-k="ty1v"
+                    type="text"
+                    placeholder="e.g., Domine 32px / 600 / -0.5% tracking"
+                  />
+                </div>
+              </div>
+              <div class="fields">
+                <div class="f g2">
+                  <label>Purpose / context</label
+                  ><input
+                    class="tk-purpose"
+                    data-k="ty1p"
+                    type="text"
+                    placeholder="e.g., section titles only"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Constraints / boundary</label
+                  ><input
+                    class="tk-constraint"
+                    data-k="ty1x"
+                    type="text"
+                    placeholder="e.g., never for body copy; max one per view"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="type">+ Add type token</button>
+
+          <div class="sub">Spacing</div>
+          <div id="spaceGroup" data-token="Spacing">
+            <div class="token">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Token name</label
+                  ><input
+                    class="tk-name"
+                    data-k="sp1n"
+                    type="text"
+                    placeholder="e.g., space-sm, space-md, gutter"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Value</label
+                  ><input
+                    class="tk-value"
+                    data-k="sp1v"
+                    type="text"
+                    placeholder="e.g., 8px, 16px, 24px"
+                  />
+                </div>
+              </div>
+              <div class="fields">
+                <div class="f g2">
+                  <label>Purpose / context</label
+                  ><input
+                    class="tk-purpose"
+                    data-k="sp1p"
+                    type="text"
+                    placeholder="e.g., gap between related fields"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Constraints / boundary</label
+                  ><input
+                    class="tk-constraint"
+                    data-k="sp1x"
+                    type="text"
+                    placeholder="e.g., stick to the scale; no arbitrary values"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="space">+ Add spacing token</button>
+
+          <div class="sub">Other tokens</div>
+          <div class="note">
+            Radius, elevation and shadow, iconography, imagery style, motion,
+            anything else with a value, a purpose, and a boundary.
+          </div>
+          <div id="otherGroup" data-token="Other">
+            <div class="token">
+              <div class="fields">
+                <div class="f g2">
+                  <label>Token name</label
+                  ><input
+                    class="tk-name"
+                    data-k="ot1n"
+                    type="text"
+                    placeholder="e.g., radius-card, shadow-1, motion-ease"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Value</label
+                  ><input
+                    class="tk-value"
+                    data-k="ot1v"
+                    type="text"
+                    placeholder="e.g., 14px; 0 1px 3px rgba(0,0,0,.08); 200ms ease"
+                  />
+                </div>
+              </div>
+              <div class="fields">
+                <div class="f g2">
+                  <label>Purpose / context</label
+                  ><input
+                    class="tk-purpose"
+                    data-k="ot1p"
+                    type="text"
+                    placeholder="e.g., card corners"
+                  />
+                </div>
+                <div class="f g2">
+                  <label>Constraints / boundary</label
+                  ><input
+                    class="tk-constraint"
+                    data-k="ot1x"
+                    type="text"
+                    placeholder="e.g., never on buttons; reserve for containers"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="addrow" data-clone="other">+ Add token</button>
+        </section>
+
+        <!-- PREVIEW -->
+        <div class="preview" id="preview">
+          <div class="phead">
+            <span>DESIGN.md preview</span>
+            <button class="btn" id="closePreview" style="padding: 4px 10px">
+              Close
+            </button>
+          </div>
+          <pre id="previewText"></pre>
+        </div>
+      </div>
+    </div>
+    <footer>
+      A personalized DESIGN.md generator. Everything stays in your browser until
+      you download it.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
