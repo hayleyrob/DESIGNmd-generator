@@ -58,7 +58,16 @@
   }
 
   // ---- add-row (clone) handling, with unique data-k so each persists
-  var counters = { ux: 2, gr: 2, color: 1, type: 1, space: 1, other: 1 };
+  var counters = {
+    ux: 2,
+    gr: 2,
+    color: 1,
+    type: 1,
+    space: 1,
+    other: 1,
+    do: 2,
+    dont: 2,
+  };
   var groupMap = {
     ux: { el: "uxGroup", prefix: "ux" },
     gr: { el: "grGroup", prefix: "gr" },
@@ -66,6 +75,8 @@
     type: { el: "typeGroup", prefix: "ty" },
     space: { el: "spaceGroup", prefix: "sp" },
     other: { el: "otherGroup", prefix: "ot" },
+    do: { el: "doGroup", prefix: "do" },
+    dont: { el: "dontGroup", prefix: "dont" },
   };
   document.querySelectorAll(".addrow").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -108,6 +119,15 @@
   }
   function bullet(label, v) {
     return v ? "- **" + label + ":** " + v.replace(/\n+/g, " ") + "\n" : "";
+  }
+  function ddList(groupId) {
+    var items = [];
+    document
+      .querySelectorAll("#" + groupId + " .dd-text")
+      .forEach(function (el) {
+        if (el.value.trim()) items.push(el.value.trim());
+      });
+    return items;
   }
   function appTable(groupId, col2) {
     var rows = [];
@@ -215,6 +235,27 @@
       if (typ) md += "### Typography\n\n" + typ;
       if (spc) md += "### Spacing\n\n" + spc;
       if (oth) md += "### Other tokens\n\n" + oth;
+    }
+
+    // 5. Overall dos and don'ts
+    var dos = ddList("doGroup");
+    var donts = ddList("dontGroup");
+    if (dos.length || donts.length) {
+      md += "## 5. Overall dos and don'ts\n\n";
+      if (dos.length) {
+        md += "**Do**\n\n";
+        dos.forEach(function (x) {
+          md += "- " + x.replace(/\n+/g, " ") + "\n";
+        });
+        md += "\n";
+      }
+      if (donts.length) {
+        md += "**Don't**\n\n";
+        donts.forEach(function (x) {
+          md += "- " + x.replace(/\n+/g, " ") + "\n";
+        });
+        md += "\n";
+      }
     }
 
     var d = new Date();

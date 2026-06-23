@@ -221,6 +221,16 @@ body {
 .token .fields {
   margin: 0 0 9px;
 }
+/* dos and don'ts: strip the card so each reads as a simple line */
+.ddrow {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.ddrow .fields {
+  margin: 0;
+}
 .colorwrap {
   display: flex;
   gap: 8px;
